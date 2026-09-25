@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Microsoft Edge | GV-HV-014</title>
+</head>
+<body style="margin:0;min-height:100vh;background:#ffffff;color:#172033;font-family:Segoe UI,Arial,sans-serif;">
+  <header style="position:sticky;top:0;z-index:10;background:#ffffff;border-bottom:1px solid #d9e0e6;box-shadow:0 1px 5px rgba(0,0,0,0.08);">
+    <div style="display:flex;align-items:center;gap:9px;padding:10px 12px 8px;max-width:900px;margin:0 auto;box-sizing:border-box;">
+      <button type="button" onclick="window.location.href='desktop.html'" aria-label="Voltar para a área de trabalho" style="width:38px;height:38px;flex-shrink:0;border:0;border-radius:20px;background:#edf1f5;color:#173c5b;font-size:20px;cursor:pointer;">&#8592;</button>
+      <div aria-hidden="true" style="font-size:28px;line-height:1;">🌐</div>
+      <div style="min-width:0;flex:1;">
+        <div style="font-size:14px;font-weight:700;">Microsoft Edge</div>
+        <div style="margin-top:1px;color:#617184;font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Perfil corporativo · Henrique Valença</div>
+      </div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:8px;padding:0 12px 10px;max-width:900px;margin:0 auto;box-sizing:border-box;">
+      <input id="barra-pesquisa" type="text" placeholder="Pesquisar ou inserir endereço da Web" aria-label="Barra de pesquisa" style="min-width:0;flex:1;height:40px;padding:0 15px;border:1px solid #d5dde5;border-radius:22px;background:#f5f7f9;color:#172033;font-size:12px;outline:none;box-sizing:border-box;">
+      <button id="botao-historico" type="button" onclick="mostrarHistorico()" style="height:38px;padding:0 13px;border:0;border-radius:20px;background:#173c5b;color:#ffffff;font-size:12px;font-weight:700;cursor:pointer;">Histórico</button>
+      <button id="botao-favoritos" type="button" onclick="mostrarFavoritos()" style="height:38px;padding:0 13px;border:1px solid #d5dde5;border-radius:20px;background:#ffffff;color:#526274;font-size:12px;cursor:pointer;">Favoritos</button>
+    </div>
+  </header>
+
+  <main style="width:100%;max-width:900px;margin:0 auto;padding:18px 12px 42px;box-sizing:border-box;">
+    <section id="pagina-inicial" style="min-height:62vh;background:#ffffff;"></section>
+
+    <section id="historico" style="display:none;">
+      <div style="margin-bottom:14px;color:#173c5b;font-size:20px;font-weight:700;">Histórico de navegação</div>
+
+      <div style="display:grid;gap:14px;">
+        <article style="overflow:hidden;background:#ffffff;border:1px solid #dbe3eb;border-radius:10px;">
+          <div style="padding:13px 16px;border-bottom:1px solid #e4e9ef;color:#617184;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.7px;">Domingo · 09/08/2026</div>
+          <div style="padding:15px 16px;border-bottom:1px solid #e4e9ef;"><div style="color:#617184;font-size:12px;">20h47</div><div style="margin-top:4px;font-size:15px;font-weight:700;">Verificação final documentos Aurora</div><div style="margin-top:4px;color:#718096;font-size:12px;">intranet.grupovalenca.local/documentos</div></div>
+          <div style="padding:15px 16px;border-bottom:1px solid #e4e9ef;"><div style="color:#617184;font-size:12px;">16h28</div><div style="margin-top:4px;font-size:15px;font-weight:700;">Bagagem de mão viagem curta</div><div style="margin-top:4px;color:#718096;font-size:12px;">Pesquisa</div></div>
+          <div style="padding:15px 16px;border-bottom:1px solid #e4e9ef;"><div style="color:#617184;font-size:12px;">16h25</div><div style="margin-top:4px;font-size:15px;font-weight:700;">Mapa rodoviário RS</div><div style="margin-top:4px;color:#718096;font-size:12px;">Pesquisa</div></div>
+          <div style="padding:15px 16px;"><div style="color:#617184;font-size:12px;">16h22</div><div style="margin-top:4px;font-size:15px;font-weight:700;">Horários intermunicipais RS</div><div style="margin-top:4px;color:#718096;font-size:12px;">Pesquisa</div></div>
+        </article>
+
+        <article style="overflow:hidden;background:#ffffff;border:1px solid #dbe3eb;border-radius:10px;">
+          <div style="padding:13px 16px;border-bottom:1px solid #e4e9ef;color:#617184;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.7px;">Sábado · 08/08/2026</div>
+          <div style="padding:15px 16px;border-bottom:1px solid #e4e9ef;"><div style="color:#617184;font-size:12px;">19h02</div><div style="margin-top:4px;font-size:15px;font-weight:700;">Armazenamento seguro de cópias</div><div style="margin-top:4px;color:#718096;font-size:12px;">Pesquisa</div></div>
+          <div style="padding:15px 16px;"><div style="color:#617184;font-size:12px;">11h35</div><div style="margin-top:4px;font-size:15px;font-weight:700;">Pendrive criptografado</div><div style="margin-top:4px;color:#718096;font-size:12px;">Pesquisa</div></div>
+        </article>
+
+        <article style="overflow:hidden;background:#ffffff;border:1px solid #dbe3eb;border-radius:10px;">
+          <div style="padding:13px 16px;border-bottom:1px solid #e4e9ef;color:#617184;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.7px;">Sexta-feira · 07/08/2026</div>
+          <div style="padding:15px 16px;border-bottom:1px solid #e4e9ef;"><div style="color:#617184;font-size:12px;">18h14</div><div style="margin-top:4px;font-size:15px;font-weight:700;">Verificação de integridade de documentos digitais</div><div style="margin-top:4px;color:#718096;font-size:12px;">Pesquisa</div></div>
+          <div style="padding:15px 16px;"><div style="color:#617184;font-size:12px;">09h27</div><div style="margin-top:4px;font-size:15px;font-weight:700;">Transferência segura de arquivos</div><div style="margin-top:4px;color:#718096;font-size:12px;">Pesquisa</div></div>
+        </article>
+
+        <article style="overflow:hidden;background:#ffffff;border:1px solid #dbe3eb;border-radius:10px;">
+          <div style="padding:13px 16px;border-bottom:1px solid #e4e9ef;color:#617184;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.7px;">Quinta-feira · 06/08/2026</div>
+          <div style="padding:15px 16px;border-bottom:1px solid #e4e9ef;"><div style="color:#617184;font-size:12px;">17h41</div><div style="margin-top:4px;font-size:15px;font-weight:700;">Boas práticas de preservação de arquivos</div><div style="margin-top:4px;color:#718096;font-size:12px;">Pesquisa</div></div>
+          <div style="padding:15px 16px;border-bottom:1px solid #e4e9ef;"><div style="color:#617184;font-size:12px;">13h55</div><div style="margin-top:4px;font-size:15px;font-weight:700;">Armazenamento externo criptografado</div><div style="margin-top:4px;color:#718096;font-size:12px;">Pesquisa</div></div>
+          <div style="padding:15px 16px;"><div style="color:#617184;font-size:12px;">08h49</div><div style="margin-top:4px;font-size:15px;font-weight:700;">Histórico de versões de documento corporativo</div><div style="margin-top:4px;color:#718096;font-size:12px;">Pesquisa</div></div>
+        </article>
+
+        <article style="overflow:hidden;background:#ffffff;border:1px solid #dbe3eb;border-radius:10px;">
+          <div style="padding:13px 16px;border-bottom:1px solid #e4e9ef;color:#617184;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.7px;">Quarta-feira · 05/08/2026</div>
+          <div style="padding:15px 16px;border-bottom:1px solid #e4e9ef;"><div style="color:#617184;font-size:12px;">16h32</div><div style="margin-top:4px;font-size:15px;font-weight:700;">Consulta de fornecedores homologados</div><div style="margin-top:4px;color:#718096;font-size:12px;">portal.grupovalenca.local/fornecedores</div></div>
+          <div style="padding:15px 16px;border-bottom:1px solid #e4e9ef;"><div style="color:#617184;font-size:12px;">10h11</div><div style="margin-top:4px;font-size:15px;font-weight:700;">Rastreabilidade documental</div><div style="margin-top:4px;color:#718096;font-size:12px;">Pesquisa</div></div>
+          <div style="padding:15px 16px;"><div style="color:#617184;font-size:12px;">07h58</div><div style="margin-top:4px;font-size:15px;font-weight:700;">Responsabilidade técnica em documentação corporativa</div><div style="margin-top:4px;color:#718096;font-size:12px;">Pesquisa</div></div>
+        </article>
+
+        <article style="overflow:hidden;background:#ffffff;border:1px solid #dbe3eb;border-radius:10px;">
+          <div style="padding:13px 16px;border-bottom:1px solid #e4e9ef;color:#617184;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.7px;">Terça-feira · 04/08/2026</div>
+          <div style="padding:15px 16px;border-bottom:1px solid #e4e9ef;"><div style="color:#617184;font-size:12px;">14h13</div><div style="margin-top:4px;font-size:15px;font-weight:700;">Processo administrativo AP-0713/2026</div><div style="margin-top:4px;color:#718096;font-size:12px;">portal.grupovalenca.local/processos</div></div>
+          <div style="padding:15px 16px;border-bottom:1px solid #e4e9ef;"><div style="color:#617184;font-size:12px;">09h42</div><div style="margin-top:4px;font-size:15px;font-weight:700;">Política de retenção documental</div><div style="margin-top:4px;color:#718096;font-size:12px;">intranet.grupovalenca.local/politicas</div></div>
+          <div style="padding:15px 16px;"><div style="color:#617184;font-size:12px;">08h17</div><div style="margin-top:4px;font-size:15px;font-weight:700;">Relatório Aurora - documentos de suporte</div><div style="margin-top:4px;color:#718096;font-size:12px;">Pesquisa</div></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="favoritos" style="display:none;">
+      <div style="margin-bottom:14px;color:#173c5b;font-size:20px;font-weight:700;">Favoritos</div>
+      <div style="overflow:hidden;background:#ffffff;border:1px solid #dbe3eb;border-radius:10px;">
+        <div style="padding:17px;border-bottom:1px solid #e4e9ef;"><strong>Portal Corporativo</strong><div style="margin-top:4px;color:#718096;font-size:12px;">portal.grupovalenca.local</div></div>
+        <div style="padding:17px;border-bottom:1px solid #e4e9ef;"><strong>ERP Financeiro</strong><div style="margin-top:4px;color:#718096;font-size:12px;">erp.grupovalenca.local</div></div>
+        <div style="padding:17px;border-bottom:1px solid #e4e9ef;"><strong>Intranet Grupo Valença</strong><div style="margin-top:4px;color:#718096;font-size:12px;">intranet.grupovalenca.local</div></div>
+        <div style="padding:17px;"><strong>Secretaria Societária</strong><div style="margin-top:4px;color:#718096;font-size:12px;">secretaria.grupovalenca.local</div></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function mostrarHistorico() {
+      document.getElementById('pagina-inicial').style.display = 'none';
+      document.getElementById('historico').style.display = 'block';
+      document.getElementById('favoritos').style.display = 'none';
+      document.getElementById('botao-historico').style.background = '#173c5b';
+      document.getElementById('botao-historico').style.color = '#ffffff';
+      document.getElementById('botao-favoritos').style.background = '#ffffff';
+      document.getElementById('botao-favoritos').style.color = '#526274';
+      document.getElementById('barra-pesquisa').value = 'edge://history/all';
+    }
+
+    function mostrarFavoritos() {
+      document.getElementById('pagina-inicial').style.display = 'none';
+      document.getElementById('historico').style.display = 'none';
+      document.getElementById('favoritos').style.display = 'block';
+      document.getElementById('botao-favoritos').style.background = '#173c5b';
+      document.getElementById('botao-favoritos').style.color = '#ffffff';
+      document.getElementById('botao-historico').style.background = '#ffffff';
+      document.getElementById('botao-historico').style.color = '#526274';
+      document.getElementById('barra-pesquisa').value = 'edge://favorites/';
+    }
+  </script>
+</body>
+</html>
