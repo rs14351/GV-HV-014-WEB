@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>HV_Preservado | GV-HV-014</title>
+</head>
+
+<body style="margin:0;min-height:100vh;background:#eef2f6;color:#172033;font-family:Segoe UI,Arial,sans-serif;">
+
+<header style="padding:14px 16px;background:#173c5b;color:white;">
+  <div style="display:flex;align-items:center;gap:12px;max-width:720px;margin:auto;">
+    <button type="button"
+      onclick="location.href='aurora.html'"
+      style="width:42px;height:42px;border:1px solid #ffffff40;border-radius:8px;background:#ffffff1a;color:white;font-size:22px;cursor:pointer;">
+      ←
+    </button>
+
+    <div>
+      <div style="color:#d1b978;font-size:12px;font-weight:700;letter-spacing:1px;">
+        GRUPO VALENÇA
+      </div>
+      <div style="margin-top:3px;font-size:18px;font-weight:700;">
+        Arquivo protegido
+      </div>
+    </div>
+  </div>
+</header>
+
+<main style="max-width:720px;margin:auto;padding:32px 16px;box-sizing:border-box;">
+
+<section id="bloqueado"
+style="background:white;border:1px solid #dbe3eb;border-radius:12px;overflow:hidden;">
+
+  <div style="padding:32px 24px;text-align:center;border-bottom:1px solid #e4e9ef;">
+    <div style="font-size:56px;">🔒</div>
+
+    <h1 style="margin:14px 0 6px;color:#173c5b;font-size:24px;">
+      HV_Preservado
+    </h1>
+
+    <div style="color:#617184;font-size:13px;">
+      Conteúdo local protegido
+    </div>
+  </div>
+
+  <div style="padding:26px 22px;">
+
+    <div style="margin-bottom:7px;font-size:13px;font-weight:700;">
+      Chave de acesso
+    </div>
+
+    <input
+      id="chave"
+      type="password"
+      inputmode="numeric"
+      maxlength="4"
+      autocomplete="off"
+      placeholder="••••"
+      style="width:100%;height:48px;border:1px solid #cbd5df;border-radius:8px;background:#f8fafc;font-size:20px;letter-spacing:6px;text-align:center;box-sizing:border-box;"
+    >
+
+    <button
+      type="button"
+      onclick="desbloquear()"
+      style="width:100%;height:48px;margin-top:14px;border:0;border-radius:8px;background:#173c5b;color:white;font-size:14px;font-weight:700;cursor:pointer;">
+      Desbloquear
+    </button>
+
+    <div id="erro"
+      style="display:none;margin-top:14px;padding:11px;border:1px solid #e2c3c3;border-radius:7px;background:#fff5f5;color:#8f3434;font-size:12px;text-align:center;">
+      Chave inválida.
+    </div>
+
+    <div style="margin-top:22px;padding-top:18px;border-top:1px solid #e4e9ef;color:#718096;font-size:11px;text-align:center;">
+      Arquivo local da estação GV-HV-014
+    </div>
+
+  </div>
+</section>
+
+
+<section id="desbloqueado" style="display:none;">
+
+  <div style="margin-bottom:18px;padding:18px;background:white;border:1px solid #dbe3eb;border-radius:10px;">
+    <div style="color:#617184;font-size:12px;text-transform:uppercase;">
+      Localização
+    </div>
+
+    <div style="margin-top:5px;font-size:14px;font-weight:700;">
+      GV-HV-014 / Projetos / Aurora / HV_Preservado
+    </div>
+  </div>
+
+  <div style="background:white;border:1px solid #dbe3eb;border-radius:10px;overflow:hidden;">
+
+    <div style="padding:15px 17px;border-bottom:1px solid #e4e9ef;color:#617184;font-size:12px;font-weight:700;text-transform:uppercase;">
+      Conteúdo desbloqueado
+    </div>
+
+    <div style="padding:28px 20px;text-align:center;">
+
+      <div style="font-size:46px;">🔓</div>
+
+      <div style="margin-top:12px;color:#173c5b;font-size:18px;font-weight:700;">
+        Acesso autorizado
+      </div>
+
+      <div style="margin-top:8px;color:#617184;font-size:13px;">
+        Conteúdo preservado disponível.
+      </div>
+
+      <div style="margin-top:18px;padding:14px;border:1px dashed #cbd5df;border-radius:8px;background:#f8fafc;color:#718096;font-size:12px;">
+        Os arquivos preservados serão exibidos aqui na próxima etapa.
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+</main>
+
+<script>
+function desbloquear(){
+  const campo=document.getElementById('chave');
+  const erro=document.getElementById('erro');
+
+  if(campo.value.trim()==='1956'){
+    document.getElementById('bloqueado').style.display='none';
+    document.getElementById('desbloqueado').style.display='block';
+    erro.style.display='none';
+    window.scrollTo(0,0);
+  }else{
+    erro.style.display='block';
+    campo.value='';
+    campo.focus();
+  }
+}
+
+document.getElementById('chave').addEventListener('keydown',function(e){
+  if(e.key==='Enter') desbloquear();
+});
+</script>
+
+</body>
+</html>
