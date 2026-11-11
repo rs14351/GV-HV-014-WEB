@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Log de Correlação de Sessões | GV-HV-014</title>
+</head>
+
+<body style="margin:0;min-height:100vh;background:#eef2f6;color:#172033;font-family:Segoe UI,Arial,sans-serif;">
+
+<header style="padding:14px 16px;background:#173c5b;color:#fff;">
+  <div style="display:flex;align-items:center;gap:12px;max-width:820px;margin:auto;">
+
+    <button
+      type="button"
+      onclick="location.href='hv-preservado.html'"
+      style="width:42px;height:42px;border:1px solid #ffffff40;border-radius:8px;background:#ffffff1a;color:#fff;font-size:22px;cursor:pointer;">
+      ←
+    </button>
+
+    <div>
+      <div style="color:#d1b978;font-size:12px;font-weight:700;letter-spacing:1px;">
+        GRUPO VALENÇA
+      </div>
+
+      <div style="margin-top:3px;font-size:18px;font-weight:700;">
+        Visualizador de registros
+      </div>
+    </div>
+
+  </div>
+</header>
+
+
+<main style="max-width:820px;margin:auto;padding:28px 14px 45px;box-sizing:border-box;">
+
+<article style="background:#fff;border:1px solid #d7e0e8;border-radius:10px;box-shadow:0 10px 26px rgba(23,60,91,.10);overflow:hidden;">
+
+  <section style="padding:25px 24px;border-top:8px solid #173c5b;border-bottom:1px solid #dfe6ec;">
+
+    <div style="color:#b49a63;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;">
+      Tecnologia da Informação
+    </div>
+
+    <h1 style="margin:8px 0 5px;color:#173c5b;font-size:24px;">
+      Log de Correlação de Sessões
+    </h1>
+
+    <div style="color:#617184;font-size:13px;">
+      Exportação de auditoria · Gestão de Identidades
+    </div>
+
+  </section>
+
+
+  <section style="padding:18px 24px;background:#f7f9fb;border-bottom:1px solid #dfe6ec;font-size:13px;line-height:1.7;">
+
+    <strong>Data analisada:</strong> 07/08/2026<br>
+    <strong>Intervalo:</strong> 08:30 - 08:45<br>
+    <strong>Origem:</strong> Serviços de Identidade / Repositório Corporativo
+
+  </section>
+
+
+  <section style="padding:24px;">
+
+    <div style="overflow-x:auto;background:#111820;border-radius:8px;border:1px solid #263443;">
+
+<pre style="margin:0;padding:22px;color:#d9e2ec;font-family:Consolas,'Courier New',monospace;font-size:12px;line-height:1.7;white-space:pre-wrap;overflow-wrap:anywhere;">[08:31:04]
+USUARIO_AUTENTICADO : clara.menezes
+SESSAO               : SID-0708-CM-4419
+STATUS               : AUTENTICADA
+
+[08:38:57]
+IDENTIDADE_DELEGADA  : diretoria.executiva
+SESSAO_ORIGEM        : SID-0708-CM-4419
+STATUS               : ATIVA
+
+[08:39:12]
+RECURSO              : DOC-884-AUR
+ACAO                 : ALTERAR_PERMISSAO
+DETALHE              : Conselho removido do acesso
+IDENTIDADE_ATIVA     : diretoria.executiva
+SESSAO_ORIGEM        : SID-0708-CM-4419
+
+[08:41:03]
+RECURSO              : DOC-884-AUR
+ACAO                 : MOVER
+DESTINO              : /Restrito
+IDENTIDADE_ATIVA     : diretoria.executiva
+SESSAO_ORIGEM        : SID-0708-CM-4419
+
+[08:41:06]
+SESSAO_ORIGEM        : SID-0708-CM-4419
+STATUS               : EVENTOS_CORRELACIONADOS</pre>
+
+    </div>
+
+  </section>
+
+
+  <section style="margin:0 24px 28px;padding:18px;border:1px solid #d7e0e8;border-radius:8px;background:#f8fafc;">
+
+    <div style="color:#173c5b;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;">
+      Nota técnica
+    </div>
+
+    <p style="margin:10px 0 0;color:#475569;font-size:13px;line-height:1.7;">
+      Eventos que apresentam o mesmo identificador de sessão são correlacionados à mesma autenticação de origem, inclusive quando uma identidade institucional delegada é utilizada durante a sessão.
+    </p>
+
+  </section>
+
+
+  <footer style="padding:15px 24px;border-top:1px solid #dfe6ec;background:#f7f9fb;color:#718096;font-size:11px;">
+    TI_Log_Correlacao_Sessoes_0708 · Exportação de auditoria
+  </footer>
+
+</article>
+
+</main>
+
+</body>
+</html>
